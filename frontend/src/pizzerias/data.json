@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "pizzeria":"ABC Pizza",
+        "city": "New York"
+    },
+    {
+        "id":2,
+        "pizzeria":"Tasty Pizza",
+        "city": "New Jersey"
+    },
+    {
+        "id":3,
+        "pizzeria":"Pizza",
+        "city": "Old York"
+    }
+]

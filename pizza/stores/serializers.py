@@ -1,15 +1,22 @@
 from django.db import models
 from django.db.models import fields
 from rest_framework import serializers
+from rest_framework.reverse import reverse
+
 from .models import Pizzeria
 
 class PizzeriaListSerializer(serializers.ModelSerializer):
+    absolute_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Pizzeria
         fields = [
             'id', 'logo_image', 'pizzeria_name', 
-            'city', 'zip_code'
+            'city', 'zip_code', 'absolute_url'
         ]
+    
+    def get_absolute_url(self, obj):
+        return reverse('pizzeria_detail', args=(obj.pk,))
 
 
 class PizzeriaDetailSerializer(serializers.ModelSerializer):
